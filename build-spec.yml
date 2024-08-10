@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+  build:
+    commands:
+      - echo "Deploying AWS resources using CloudFormation"
+      - aws cloudformation deploy --template-file sample-code.yaml --stack-name MyVPCStack --capabilities CAPABILITY_IAM
